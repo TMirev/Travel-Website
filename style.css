@@ -1,0 +1,493 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: lightblue;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x600/?travel') no-repeat center center/cover;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2.5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    width: 62%;
+
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Destination Cards */
+.destinations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 2rem;
+}
+
+.card-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+
+
+}
+
+.card {
+    flex: 0 1 calc(33.333% - 2rem);
+    /* 3 cards per row with spacing */
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: lightseagreen;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+header {
+    text-align: center;
+    padding: 1.2rem;
+    background-color: lightseagreen;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+
+.dropdown {
+    position: relative;
+    right: -20px;
+    top: -101px;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+}
+
+.dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 1.5rem 4.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e0f7fa;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    font-family: 'Quicksand', 'Poppins', sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    text-decoration-style: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0px auto 40px auto;
+    padding: 30px;
+    background-color: #e0f7fa;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact-container button {
+    background-color: lightslategrey;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping to next line */
+    justify-content: center;
+    /* Centers the rows */
+    gap: 20px;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+.tip-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: calc(33.333% - 20px);
+    /* 3 cards per row with gap */
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 900px) {
+    .tip-card {
+        width: 100%;
+        /* Stack cards on smaller screens */
+    }
+}
+
+
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.tip-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #0077b6;
+}
+
+.tip-description {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.message-box {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #e6f7ff;
+    /* Soft blue background */
+    border: 2px solid #0077b6;
+    /* Accent border */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 1s ease-in;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-box h2 {
+    color: #0077b6;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.message-box p {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-teaser {
+    margin: 0 auto;
+    max-width: 600px;
+    /* Optional: controls width */
+    text-align: center;
+    /* Centers text inside */
+}
+
+button[type="submit"] {
+    background-color: #0077b6;
+    /* Deep ocean blue */
+    color: white;
+    /* Text color */
+    padding: 12px 24px;
+    /* Space inside the button */
+    border: none;
+    /* Remove default border */
+    border-radius: 6px;
+    /* Rounded corners */
+    font-size: 1em;
+    /* Readable text size */
+    cursor: pointer;
+    /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.email-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.email-input::placeholder {
+    color: #999;
+}
+
+.email-input:focus {
+    border-color: #0077cc;
+    outline: none;
+    background-color: #fff;
+}
+
+
+/* Top Destinations */
+.destination-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 350px;
+    margin: 20px;
+    flex: 0 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.destination-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.highlights {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 12px;
+}
+
+.highlights li {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.best-time {
+    color: #0077cc;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #005fa3;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.destination-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.center-wrapper {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+
+}
+
+#locationInput {
+    width: 80%;
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid lightseagreen;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Button styling */
+.contact-container button {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.contact-container button:hover {
+    background-color: #2980b9;
+}
+
+input:invalid,
+textarea:invalid {
+    border: 2px solid rgb(98, 0, 255);
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0.5rem 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    /* Elegant, travel-inspired font */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #00eaff54);
+
+}
